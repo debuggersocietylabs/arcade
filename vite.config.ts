@@ -27,12 +27,12 @@ export default defineConfig({
   build: {
     target: 'es2022',
     chunkSizeWarningLimit: 6000,
+    // Never inline models as data URLs; the loader works best with real files.
+    assetsInlineLimit: (file) => (file.endsWith('.glb') ? false : undefined),
     rollupOptions: {
       input: { main: resolve(root, 'index.html'), ...discoverGameEntries() },
-      output: {
-        // One shared Babylon chunk so it is downloaded once for the whole arcade.
-        manualChunks: (id) => (id.includes('node_modules/@babylonjs') ? 'babylon' : undefined),
-      },
+      // No manualChunks: automatic splitting shares common Babylon code between games without making
+      // every game download what only one of them uses (e.g. the glTF loader and PBR materials).
     },
   },
   test: {

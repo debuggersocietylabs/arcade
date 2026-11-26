@@ -8,7 +8,7 @@ description: Invent AND build AND publish one brand-new original game in a singl
 **The deliverable is a new, complete, playable game live on the site by the end of this session.** An idea or spec alone is a failed session.
 
 ## 1. Ideate (keep it short: about 15% of the session)
-Follow `ideate-game` steps 1-5 (check what exists, research what is trending now, brainstorm at least 8 concepts, pick one original winner, write the spec to `progress/ideas/`). Pick for **buildability today**: one core mechanic that is fun within 10 seconds, explainable in one sentence, procedural art only. Then continue immediately; do not stop after the spec.
+Follow `ideate-game` steps 1-5 (check what exists, research what is trending now, brainstorm at least 8 concepts, pick one original winner, write the spec to `progress/ideas/`). Pick for **buildability today**: one core mechanic that is fun within 10 seconds, explainable in one sentence, art that is procedural or CC0 (CLAUDE.md "Assets"). Then continue immediately; do not stop after the spec.
 
 Never repeat or lightly reskin an existing game. Vary genre, 2D/3D and mechanic compared with the last 5 games.
 

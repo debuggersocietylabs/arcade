@@ -29,7 +29,7 @@ Fix any **Stability** score ≤ 2 first (broken > fancy).
 ## 3. Decide
 Every session ships **all three** of:
 1. **Depth:** at least one substantial new feature or system that makes the game more complex and gives the player something new to do (e.g. missions, traffic, pedestrians, vehicle types, economy, garage, day/night effects on gameplay, stunts, new districts, weather). Prefer systems that interact with ones already there over isolated gimmicks.
-2. **Graphics:** a clearly visible visual upgrade (e.g. building windows and facades via DynamicTexture, shadows, sky and lighting, day/night, better vehicle and character models, props and trees, water, particles, post-processing). All procedural: no external assets.
+2. **Graphics:** a clearly visible visual upgrade (e.g. building windows and facades via DynamicTexture, shadows, sky and lighting, day/night, better vehicle and character models, props and trees, water, particles, post-processing). Use CC0 models and textures where they beat procedural art (cars, characters, trees, street props, facades): follow CLAUDE.md "Assets".
 3. **Quality:** fix the worst problem your assessment found (feel, bugs, performance, controls).
 
 Be ambitious: a full session's worth of work, not a tweak. Write a short plan first. Build big features as a working first slice, then deepen them in this and later sessions. Never ship something half-broken; if it cannot be finished, keep what works and move the rest to the roadmap. The roadmap is a starting point: extend it with your own ideas so it never runs out.
@@ -38,7 +38,7 @@ Be ambitious: a full session's worth of work, not a tweak. Write a short plan fi
 - Rules in `logic.ts` with unit tests first (pure; no Babylon/DOM); rendering/input in `game.ts`. If `logic.ts` or `game.ts` grows beyond ~700 lines, split into modules (`traffic.ts`, `missions.ts`, `world.ts`, `vehicles.ts`…), each with tests.
 - Keep the `?seed=N` determinism and the `getState()` / `command()` hooks working; extend `getState()` with new fields so e2e tests can see them. Update `harbor-city.e2e.ts` for new user-facing flows.
 - Performance budget: batch static scenery (thin instances / frozen instances), reuse materials, no per-frame allocations in hot loops where avoidable, keep draw calls low (instancing, merging, LOD/culling) so it stays smooth on an ordinary laptop and phone. The software-WebGL CI must still boot in <15 s: put expensive effects (shadows, post-processing) behind a quality setting that drops them on software rendering or `?quality=low`.
-- Constraints: no external assets/CDN, no real brands or copied names, **no violence/gore** (fun comes from driving, exploring, jobs, stunts, collecting, customising). Keep touch/mobile in mind; implementing the touch overlay is high priority until done.
+- Constraints: assets only as allowed by CLAUDE.md "Assets" (CC0, committed, no CDN), no real brands or copied names, **no violence/gore** (fun comes from driving, exploring, jobs, stunts, collecting, customising). Keep touch/mobile in mind; implementing the touch overlay is high priority until done.
 - Don't remove existing features unless replacing them with something better; keep save data (localStorage keys) backwards compatible.
 
 ## 5. Verify

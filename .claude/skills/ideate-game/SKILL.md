@@ -15,12 +15,12 @@ If web search/fetch tools are available, use them to see what is trending *right
 Record 3-5 concrete signals with a source/date each (e.g. "X genre dominating top charts this week").
 
 ## 3. Diverge, then converge
-Write at least **8 raw concepts** (one line each), deliberately mixing a *mechanic* from one place with a *theme/format* from another. Then score the best 3 on: originality (is it a fresh twist, not a clone?), cultural relevance, **fun in a 2-5 minute session**, "explainable in one sentence", feasibility with procedural art and Babylon.js in ONE build session, mobile/touch friendly, variety vs existing games. Pick the winner.
+Write at least **8 raw concepts** (one line each), deliberately mixing a *mechanic* from one place with a *theme/format* from another. Then score the best 3 on: originality (is it a fresh twist, not a clone?), cultural relevance, **fun in a 2-5 minute session**, "explainable in one sentence", feasibility with procedural or CC0 art and Babylon.js in ONE build session, mobile/touch friendly, variety vs existing games. Pick the winner.
 
 ## 4. Hard rules
 - **Original, not derivative.** Take inspiration from trends, genres and themes; never use trademarked names, characters, logos, song lyrics or copyrighted worlds, and don't make a recognisable clone of one specific game. Parody/homage must be generic enough to be clearly its own thing. Invent an original title.
 - No violence/gore/hate, nothing that targets real people. Family-friendly.
-- No external assets: everything must be buildable from procedural meshes, emissive materials, WebAudio synthesis, CSS/emoji.
+- Must be buildable from procedural art and/or CC0 models and textures (CLAUDE.md "Assets"), with WebAudio-synthesised sound. Don't depend on a specific asset you have not confirmed you can download.
 
 ## 5. Write the spec
 Create `progress/ideas/YYYY-MM-DD-<slug>.md`:

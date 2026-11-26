@@ -14,7 +14,8 @@ description: Practical patterns and gotchas for building 2D and 3D games with Ba
 - Use `createInstance()` for many identical meshes; create/dispose by diffing against `state.entities` (see neon-runner). Reuse materials.
 - Glow: `GlowLayer` for neon look; fog (`scene.fogMode`) hides pop-in. Left-handed coords: +Z forward from the default camera, +X right, +Y up.
 - **2D**: `createOrthoCamera2D(scene, height)`; flat meshes (`CreatePlane`, `CreateDisc`) at z = 0, z-order via small z offsets. Visible world height is fixed; width follows the aspect ratio, so clamp gameplay to a safe-area width.
-- No external assets: procedural meshes, `DynamicTexture` for text, WebAudio oscillators for sound, emoji for icons.
+- Art: procedural meshes and `DynamicTexture`, or CC0 models/textures committed under `games/<slug>/assets/` (rules in CLAUDE.md "Assets"; load `.glb` with `loadModel` from `@shared/models`). Sound: WebAudio oscillators. Icons: emoji.
+- Models are PBR: if they look dark, add stronger lights or an environment texture, or lower `metallic`. Scale and orientation vary between packs, so normalise them after loading.
 
 ## Feel and fairness
 - Add "juice": screen shake on hit, particles (`ParticleSystem` with a generated texture), eased camera, speed ramps, score pop-ups.
