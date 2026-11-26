@@ -20,16 +20,17 @@ Create these at **claude.ai/code → Routines** (or run `/schedule` inside Claud
 
 All sessions begin with no memory; `CLAUDE.md`, `.claude/skills/` and `progress/` give them everything. Keep the prompts short and point at the skills:
 
-| Routine | Schedule (stagger them!) | Prompt |
+| Routine | Schedule (Cairo) | What it does |
 | --- | --- | --- |
-| **Harbor City daily** | daily, e.g. 03:00 | `Use the harbor-city-daily skill: honestly assess the current state of Harbor City (play it with Playwright, take and review screenshots, score it), then ship one meaningful improvement and update the roadmap. Follow CLAUDE.md. Finish with session-wrapup (push the claude/ branch; it auto-merges).` |
-| **Game ideas** | daily or weekly, e.g. 09:00 | `Use the ideate-game skill: research what is trending, then invent one original game idea with a pop-culture hook and write it up as a spec in progress/ideas/. Do not build it. Follow CLAUDE.md. Finish with session-wrapup (push the claude/ branch; it auto-merges).` |
+| **Arcade: Harbor City daily** | daily 03:00 | `harbor-city-daily`: assess, then add depth (new features/systems), upgrade graphics, fix the worst problem |
+| **Arcade: daily new game** | daily 09:00 | `daily-new-game`: research trends, invent an original game, build it and publish it |
 
-Optional extras (same style): **New game** (weekly: `Use the new-game skill to build the best open idea that has a spec in progress/ideas/. Follow CLAUDE.md; finish with session-wrapup (push the claude/ branch; it auto-merges).`) turns accumulated idea specs into playable games; **Bug hunt** (`Use the fix-bugs skill…`) is a cheap daily safety net.
+Both exist at claude.ai/code/routines; edit prompts and schedules there. Optional extra: a **Bug hunt** routine (`Use the fix-bugs skill…`).
 
 Tips:
-- Run different routines at different times of day: they all touch `progress/BACKLOG.md`, so overlapping runs can cause merge conflicts. Merge each PR before the next routine fires (or accept occasional conflicts for the agent to resolve).
-- The Harbor City routine needs the Playwright browser (screenshots), so the setup script below is mandatory for it. The ideas routine benefits from web access (trend research); enable network/web access in its environment if offered.
+- Keep the schedules apart: both touch `progress/BACKLOG.md`, so overlapping runs can conflict and leave a branch unmerged.
+- Both need the Playwright browser for screenshots (see below); the new-game routine also needs web access for trend research.
+- CI runs browser tests for every game, so it slows down as games pile up. The CI job has a 15-minute timeout: check its duration now and then.
 
 Environment requirements for the routine's cloud environment:
 - Network access to the npm registry (for `npm ci`) and to Playwright's browser download (`npx playwright install --with-deps chromium`). Put those in the environment's setup script if available, e.g. `npm ci && npx playwright install --with-deps chromium`.

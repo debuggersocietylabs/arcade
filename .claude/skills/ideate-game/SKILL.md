@@ -1,11 +1,11 @@
 ---
 name: ideate-game
-description: Think up one original browser-game concept with a pop-culture or trending hook and write it up as a buildable spec, without building it. Use for the scheduled "game idea" task or whenever asked to brainstorm a new game.
+description: Think up one original browser-game concept with a pop-culture or trending hook and write it up as a buildable spec, without building it. Used by daily-new-game as its first phase, or on its own when asked only to brainstorm.
 ---
 
 # Game ideation session
 
-Output of this session = **one excellent, well-specified idea** committed to the repo (a spec file + backlog entry). **Do not write game code.** A later `new-game` session will build the best specs.
+Output of this session = **one excellent, well-specified idea** committed to the repo (a spec file + backlog entry). **When used on its own, do not write game code.** When used as part of `daily-new-game`, do steps 1-5 only, then go straight on to building.
 
 ## 1. Orient
 `npm run status`; skim `games/*/game.json`, `progress/BACKLOG.md` (all `[idea]` items, done or open) and `progress/ideas/` so you never repeat or near-duplicate an idea. Note the genres/2D-3D mix already covered; the new idea should add variety.

@@ -46,8 +46,8 @@ If Playwright's browser is missing: `npx playwright install --with-deps chromium
 - Keep the Babylon bundle lean: deep imports (`@babylonjs/core/Meshes/meshBuilder`). If you see "X needs to be imported before as it contains a side-effect", add that import to `src/shared/engine.ts`.
 
 ## Skills
-`harbor-city-daily` (daily assess + improve the flagship open-world game) · `ideate-game` (invent a trend-aware game idea + spec, no code) · `new-game` · `continue-game` · `fix-bugs` · `session-wrapup` · `game-dev-guide` (Babylon/2D/3D patterns and gotchas).
+`harbor-city-daily` (daily assess + improve the flagship open-world game) · `daily-new-game` (invent, build and publish a new game in one session) · `ideate-game` (invent a trend-aware idea + spec) · `new-game` · `continue-game` · `fix-bugs` · `session-wrapup` · `game-dev-guide` (Babylon/2D/3D patterns and gotchas).
 
 ## Flagship and idea pipeline
-- `games/harbor-city` is the flagship: an original open-world city sandbox improved daily. Its vision/roadmap lives in its `NOTES.md`.
-- Ideas flow: `ideate-game` → `progress/ideas/<date>-<slug>.md` + `[idea]` in the backlog → `new-game` builds it.
+- `games/harbor-city` is the flagship: an original open-world city sandbox improved daily (more complex, more features, better graphics every session). Its vision/roadmap lives in its `NOTES.md`.
+- A new game is published daily: `daily-new-game` runs `ideate-game` (spec in `progress/ideas/`) and then `new-game` in the same session.

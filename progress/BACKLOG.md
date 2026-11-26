@@ -31,6 +31,7 @@ Tags: `[idea]` new game idea · `[game:<slug>]` work on an existing game · `[bu
 <!-- Add `- [ ] [bug] [game:<slug>] what happens / how to reproduce`. -->
 
 ## Infra
+- [ ] [infra] E2e time grows with every daily game: keep per-game tests short; shard or parallelise before CI nears its 15-minute timeout.
 - [ ] [infra] Add a shared `src/shared/audio.ts` WebAudio helper so games can make sounds without asset files.
 - [ ] [infra] Add a shared touch-controls overlay (on-screen buttons) for mobile.
 

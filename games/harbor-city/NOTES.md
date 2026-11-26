@@ -17,7 +17,8 @@ names or assets.** Think courier/taxi/racing gigs, stunt ramps, collectibles, cu
 - Chase camera (smoothed heading, FOV widens with speed).
 - Pure rules in `logic.ts` (15 unit tests), e2e test drives a car and exits it.
 
-## Roadmap (highest value first; the daily session picks from here)
+## Roadmap (the daily session picks from here and keeps extending it; every session adds depth AND a graphics upgrade)
+0. **Graphics track:** lit windows and facades, shadows, sky + day/night, detailed car and character models, trees/street props, water, particles, post-processing (all procedural, with a low-quality fallback).
 1. **Touch controls overlay** (virtual stick + enter/handbrake buttons) so it is playable on phones.
 2. **Minimap + compass** (DOM canvas) with player, cars and pickups.
 3. **Missions**: courier delivery (A→B with timer, pay on arrival), taxi fares, checkpoint races. Mission HUD + marker beacon.

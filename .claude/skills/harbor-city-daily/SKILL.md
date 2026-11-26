@@ -5,7 +5,7 @@ description: Daily development session for Harbor City, the open-world 3D sandbo
 
 # Harbor City: daily assess-and-improve session
 
-Harbor City is the arcade's flagship: an original, family-friendly open-world city sandbox (explore on foot, drive vehicles, interact with the world). The goal is steady compounding progress: **every session leaves it noticeably better and still working.** Read `games/harbor-city/NOTES.md` first: it holds the vision, roadmap and constraints.
+Harbor City is the arcade's flagship: an original, family-friendly open-world city sandbox (explore on foot, drive vehicles, interact with the world). The goal is ambitious compounding progress: **every session makes it more complex, more feature-rich and better looking, while still working.** Think big-city sandbox: many interlocking systems, depth, and graphics that keep improving. Read `games/harbor-city/NOTES.md` first: it holds the vision, roadmap and constraints.
 
 ## 1. Orient (5 min)
 `npm ci && npm run status`. Read `games/harbor-city/NOTES.md`, the open `[game:harbor-city]` and `[bug]` items in `progress/BACKLOG.md`, and the last 3 `progress/log/*harbor-city*` entries (they contain previous assessments and scores).
@@ -27,17 +27,22 @@ Score each dimension 1-5 and write one concrete sentence of evidence for each:
 Fix any **Stability** score ≤ 2 first (broken > fancy).
 
 ## 3. Decide
-Pick the **lowest-scoring dimension that has a cheap, high-impact fix**, plus the top roadmap item that fits. Scope: ONE substantial feature (or 2-3 small ones) that you can finish, test and ship in this session. Prefer things the player notices in the first minute. Write a 3-line plan before coding. Don't start something you cannot finish; stage big features behind a working first slice (e.g. missions: one mission type first).
+Every session ships **all three** of:
+1. **Depth:** at least one substantial new feature or system that makes the game more complex and gives the player something new to do (e.g. missions, traffic, pedestrians, vehicle types, economy, garage, day/night effects on gameplay, stunts, new districts, weather). Prefer systems that interact with ones already there over isolated gimmicks.
+2. **Graphics:** a clearly visible visual upgrade (e.g. building windows and facades via DynamicTexture, shadows, sky and lighting, day/night, better vehicle and character models, props and trees, water, particles, post-processing). All procedural: no external assets.
+3. **Quality:** fix the worst problem your assessment found (feel, bugs, performance, controls).
+
+Be ambitious: a full session's worth of work, not a tweak. Write a short plan first. Build big features as a working first slice, then deepen them in this and later sessions. Never ship something half-broken; if it cannot be finished, keep what works and move the rest to the roadmap. The roadmap is a starting point: extend it with your own ideas so it never runs out.
 
 ## 4. Build
 - Rules in `logic.ts` with unit tests first (pure; no Babylon/DOM); rendering/input in `game.ts`. If `logic.ts` or `game.ts` grows beyond ~700 lines, split into modules (`traffic.ts`, `missions.ts`, `world.ts`, `vehicles.ts`…), each with tests.
 - Keep the `?seed=N` determinism and the `getState()` / `command()` hooks working; extend `getState()` with new fields so e2e tests can see them. Update `harbor-city.e2e.ts` for new user-facing flows.
-- Performance budget: batch static scenery (thin instances / frozen instances), reuse materials, no per-frame allocations in hot loops where avoidable, no more than ~400 live meshes. The software-WebGL CI must still boot in <15 s.
+- Performance budget: batch static scenery (thin instances / frozen instances), reuse materials, no per-frame allocations in hot loops where avoidable, keep draw calls low (instancing, merging, LOD/culling) so it stays smooth on an ordinary laptop and phone. The software-WebGL CI must still boot in <15 s: put expensive effects (shadows, post-processing) behind a quality setting that drops them on software rendering or `?quality=low`.
 - Constraints: no external assets/CDN, no real brands or copied names, **no violence/gore** (fun comes from driving, exploring, jobs, stunts, collecting, customising). Keep touch/mobile in mind; implementing the touch overlay is high priority until done.
 - Don't remove existing features unless replacing them with something better; keep save data (localStorage keys) backwards compatible.
 
 ## 5. Verify
-`npm run check` must pass. Re-take screenshots of the new work and compare against the assessment: did the targeted dimension actually improve? If not, iterate or revert the cosmetic part.
+`npm run check` must pass. Re-take the same screenshots and compare before and after: is the new feature usable, and does it visibly look better? If not, iterate.
 
 ## 6. Record
 - `games/harbor-city/NOTES.md`: update *Current state*, re-order and extend the *Roadmap* (add ideas you had while playing, drop done items), update *Known issues*.
