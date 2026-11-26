@@ -1,0 +1,11 @@
+{
+  "slug": "__SLUG__",
+  "title": "__TITLE__",
+  "description": "TODO: one-sentence pitch shown on the arcade card.",
+  "type": "3d",
+  "status": "wip",
+  "controls": "← → ↑ ↓ or WASD to move",
+  "emoji": "🎮",
+  "color": "#7c5cff",
+  "added": "__DATE__"
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "neon-runner",
+  "title": "Neon Runner",
+  "description": "Dash down a synthwave highway: switch lanes, jump barriers, grab coins. How far can you get?",
+  "type": "3d",
+  "status": "playable",
+  "controls": "← → or A D to change lane · ↑ / Space to jump · swipe / tap on touch",
+  "emoji": "🏃",
+  "color": "#22e6ff",
+  "added": "2026-11-20"
+}

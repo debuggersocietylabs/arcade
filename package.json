@@ -1,0 +1,32 @@
+{
+  "name": "arcade",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-game arcade (Babylon.js + TypeScript + Vite) hosted on GitHub Pages",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm test && npm run build && npm run test:e2e",
+    "new-game": "node scripts/new-game.mjs",
+    "status": "node scripts/status.mjs"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^9.37.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  }
+}
