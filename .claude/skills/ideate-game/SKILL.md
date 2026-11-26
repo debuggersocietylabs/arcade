@@ -48,4 +48,4 @@ Create `progress/ideas/YYYY-MM-DD-<slug>.md`:
 
 ## 6. Register it
 Add a line at the TOP of "Ideas for new games" in `progress/BACKLOG.md`:
-`- [ ] [idea] **<Title>** (<2D|3D>): <pitch>. Spec: progress/ideas/<file>.md` (tag it `★ trending` if cultural timing matters). Add the runner-ups as plain `[idea]` lines. Create `progress/log/YYYY-MM-DD-ideas.md`, then run the `session-wrapup` skill (PR titled `[idea] <Title>`; no `npm run check` failure may remain, though only docs changed).
+`- [ ] [idea] **<Title>** (<2D|3D>): <pitch>. Spec: progress/ideas/<file>.md` (tag it `★ trending` if cultural timing matters). Add the runner-ups as plain `[idea]` lines. Create `progress/log/YYYY-MM-DD-ideas.md`, then run the `session-wrapup` skill (commit message prefixed `[idea] <Title>`; `npm run check` must still pass even though only docs changed).

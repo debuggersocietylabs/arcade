@@ -1,6 +1,6 @@
 ---
 name: session-wrapup
-description: Finish an autonomous session correctly: update NOTES.md, BACKLOG.md, write the progress log entry, run checks, commit, push and open a PR. Run at the end of every session that changed the repo.
+description: Finish an autonomous session correctly: update NOTES.md, BACKLOG.md, write the progress log entry, run checks, commit and push the branch for auto-merge. Run at the end of every session that changed the repo.
 ---
 
 # Session wrap-up (do not skip: this is how the next session knows what happened)
@@ -24,5 +24,5 @@ description: Finish an autonomous session correctly: update NOTES.md, BACKLOG.md
    ## Suggested next session
    - …
    ```
-5. Commit on a `claude/<kind>-<slug>` branch (imperative message, explain why), push, open a PR to `main` with a short summary and test results. Do not merge or push to `main` unless the task explicitly allows it.
-6. Finish with a brief final message: what changed, PR/branch name, anything needing a human.
+5. **Deliver.** Commit on a branch named `claude/<kind>-<slug>-<YYYY-MM-DD>` (imperative message explaining why) and push it: `git push -u origin <branch>`. Do **not** push to `main` directly and do not open a PR: the `auto-merge.yml` GitHub Action re-runs all checks, rebases onto `main`, merges, deletes the branch and deploys the site. Never force-push, never edit `.github/workflows/`. Only push when `npm run check` passes (if the only blocker is an environment limit such as being unable to install the Playwright browser, push anyway but say so in the log). If your task prompt explicitly asks for a PR instead, open one to `main`.
+6. Finish with a brief final message: what changed, the branch name, anything needing a human.

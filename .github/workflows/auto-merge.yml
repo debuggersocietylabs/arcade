@@ -1,0 +1,49 @@
+name: Auto-merge Claude branches
+
+# Autonomous Claude sessions push a branch named claude/<something>. If all checks pass, this workflow
+# rebases it onto main, fast-forwards main, deletes the branch and triggers the Pages deploy.
+# (Pushes made with GITHUB_TOKEN do not trigger other workflows, hence the explicit dispatch.)
+# If the rebase conflicts or checks fail, nothing is merged and the branch is left for the next session / a human.
+on:
+  push:
+    branches: ['claude/**']
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: auto-merge # serialise merges so rebases see the latest main
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    uses: ./.github/workflows/ci.yml
+
+  merge:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Rebase onto main and fast-forward main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              git push origin --delete "$GITHUB_REF_NAME" || true
+              gh workflow run deploy.yml --ref main
+              echo "Merged $GITHUB_REF_NAME into main and triggered deploy."
+              exit 0
+            fi
+            echo "Push raced with another merge (attempt $attempt); retrying."
+          done
+          echo "::error::Could not merge $GITHUB_REF_NAME into main."
+          exit 1

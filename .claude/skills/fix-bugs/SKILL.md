@@ -12,4 +12,4 @@ description: Find and fix defects across the arcade (failing tests, console erro
 2. If nothing is logged, **hunt**: for each game, load it in Playwright, play it with scripted/randomised inputs for 30-60 s on a few `?seed=`s, collect `window.__arcade.errors` and console errors, check for stuck states (can't restart, score not updating, NaN in `getState()`), unfair or impossible content, and layout problems at mobile (390×844) and desktop sizes (screenshots).
 3. For each confirmed bug: write a **failing test first** (unit test for logic, e2e for integration), fix the root cause minimally, confirm the test passes. Do not fix by weakening or deleting tests.
 4. Log bugs you found but could not fix as `- [ ] [bug] [game:<slug>] …` in `progress/BACKLOG.md` with reproduction steps.
-5. Fix at most ~5 bugs per session. Run `npm run check`, then **session-wrapup**. PR title `[fix] …`.
+5. Fix at most ~5 bugs per session. Run `npm run check`, then **session-wrapup**. Commit message prefix `[fix]`.

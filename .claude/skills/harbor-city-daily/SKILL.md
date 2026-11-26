@@ -42,6 +42,6 @@ Pick the **lowest-scoring dimension that has a cheap, high-impact fix**, plus th
 ## 6. Record
 - `games/harbor-city/NOTES.md`: update *Current state*, re-order and extend the *Roadmap* (add ideas you had while playing, drop done items), update *Known issues*.
 - Create `progress/log/YYYY-MM-DD-harbor-city.md` with the **assessment table (scores + evidence)**, what you shipped, and "Suggested next session". Previous scores let the next session see the trend.
-- Then run the `session-wrapup` skill (backlog, commit on `claude/harbor-city-<date>`, PR titled `[game:harbor-city] <what you shipped>`).
+- Then run the `session-wrapup` skill (backlog, push branch `claude/harbor-city-<date>` for auto-merge; commit message prefixed `[game:harbor-city] <what you shipped>`).
 
 `status` in game.json stays `wip` until: missions or other clear goals exist, touch controls work, there is ambient life (traffic or pedestrians) and sound. When all four are true, set `playable`.

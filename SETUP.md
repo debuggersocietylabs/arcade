@@ -22,10 +22,10 @@ All sessions begin with no memory; `CLAUDE.md`, `.claude/skills/` and `progress/
 
 | Routine | Schedule (stagger them!) | Prompt |
 | --- | --- | --- |
-| **Harbor City daily** | daily, e.g. 03:00 | `Use the harbor-city-daily skill: honestly assess the current state of Harbor City (play it with Playwright, take and review screenshots, score it), then ship one meaningful improvement and update the roadmap. Follow CLAUDE.md. Finish with session-wrapup and open a PR.` |
-| **Game ideas** | daily or weekly, e.g. 09:00 | `Use the ideate-game skill: research what is trending, then invent one original game idea with a pop-culture hook and write it up as a spec in progress/ideas/. Do not build it. Follow CLAUDE.md. Finish with session-wrapup and open a PR.` |
+| **Harbor City daily** | daily, e.g. 03:00 | `Use the harbor-city-daily skill: honestly assess the current state of Harbor City (play it with Playwright, take and review screenshots, score it), then ship one meaningful improvement and update the roadmap. Follow CLAUDE.md. Finish with session-wrapup (push the claude/ branch; it auto-merges).` |
+| **Game ideas** | daily or weekly, e.g. 09:00 | `Use the ideate-game skill: research what is trending, then invent one original game idea with a pop-culture hook and write it up as a spec in progress/ideas/. Do not build it. Follow CLAUDE.md. Finish with session-wrapup (push the claude/ branch; it auto-merges).` |
 
-Optional extras (same style): **New game** (weekly: `Use the new-game skill to build the best open idea that has a spec in progress/ideas/. Follow CLAUDE.md; finish with session-wrapup and open a PR.`) turns accumulated idea specs into playable games; **Bug hunt** (`Use the fix-bugs skill…`) is a cheap daily safety net.
+Optional extras (same style): **New game** (weekly: `Use the new-game skill to build the best open idea that has a spec in progress/ideas/. Follow CLAUDE.md; finish with session-wrapup (push the claude/ branch; it auto-merges).`) turns accumulated idea specs into playable games; **Bug hunt** (`Use the fix-bugs skill…`) is a cheap daily safety net.
 
 Tips:
 - Run different routines at different times of day: they all touch `progress/BACKLOG.md`, so overlapping runs can cause merge conflicts. Merge each PR before the next routine fires (or accept occasional conflicts for the agent to resolve).
@@ -34,9 +34,9 @@ Tips:
 Environment requirements for the routine's cloud environment:
 - Network access to the npm registry (for `npm ci`) and to Playwright's browser download (`npx playwright install --with-deps chromium`). Put those in the environment's setup script if available, e.g. `npm ci && npx playwright install --with-deps chromium`.
 
-### How changes land
-- **Default (recommended):** routines push `claude/...` branches and open **PRs**; CI runs; you merge. Merging to `main` triggers the deploy.
-- **Hands-off:** enable *Settings → General → Allow auto-merge* plus branch protection requiring the CI check, and let sessions run `gh pr merge --auto --squash`; or grant the routine permission to push directly to `main` (deploy.yml still blocks publishing on failing tests, but a bad commit would sit on `main`). Start with PRs; loosen once you trust the output.
+### How changes land (auto-merge, no PRs)
+Routines commit to a `claude/...` branch and push it. `.github/workflows/auto-merge.yml` then runs typecheck, unit tests, build and e2e; if they pass it rebases the branch onto `main`, fast-forwards `main`, deletes the branch and dispatches `deploy.yml` (pushes made with `GITHUB_TOKEN` don't trigger other workflows, hence the dispatch). A failing branch is simply left unmerged (check the Actions tab / leftover `claude/*` branches). A rebase conflict (e.g. two routines editing `BACKLOG.md`) also leaves the branch unmerged.
+No admin settings are needed. If you later want human review instead, delete `auto-merge.yml` and tell the routines to open PRs.
 
 ### Persistent progress
 `progress/BACKLOG.md` (queue), `progress/log/` (one file per session), `games/*/NOTES.md` (per-game state). Edit the backlog yourself any time to steer the agents: add an `[idea]`, a `[bug]`, or reprioritise.

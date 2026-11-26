@@ -26,10 +26,10 @@ If Playwright's browser is missing: `npx playwright install --with-deps chromium
 ## Session protocol (every autonomous session)
 1. `npm ci && npm run status`. Read `progress/BACKLOG.md` and the `NOTES.md` of any game you will touch.
 2. Pick **one** focused task (see skills: `new-game`, `continue-game`, `fix-bugs`). Don't sprawl.
-3. Work on a branch `claude/<kind>-<slug>` (e.g. `claude/new-game-orbit-defender`).
+3. Work on a branch `claude/<kind>-<slug>-<date>` (e.g. `claude/new-game-orbit-defender-2026-12-01`).
 4. `npm run check` must be green. Look at the game in the browser (Playwright screenshot) at least once for visual work.
 5. Run the `session-wrapup` skill: update the game's `NOTES.md`, `progress/BACKLOG.md`, add `progress/log/<date>-<slug>.md`.
-6. Commit with a clear message, push the branch and open a PR to `main` (title: `[new-game] …`, `[game:<slug>] …`, `[fix] …`). If you cannot open a PR, push the branch and state its name in your final message.
+6. Commit with a clear message and push the branch: **GitHub Action `auto-merge.yml` verifies it, merges it into `main` and deploys**. No PR needed (open one only if your task says so). If checks fail on the branch, fix and push again.
 
 ## Rules
 - **Never leave `main` broken.** Deploys run on every push to `main` and are gated by CI.
@@ -42,7 +42,7 @@ If Playwright's browser is missing: `npx playwright install --with-deps chromium
 - **Originality**: inspiration from trends and genres is welcome; never use trademarked names, characters, logos, music or copied assets. Family-friendly content only (no gore/violence).
 - Don't add dependencies unless clearly needed. Don't edit `.github/workflows/` or `src/shared/` APIs in a way that breaks existing games; if you change a shared API, update every game and run all tests.
 - Don't touch other games except for bug fixes. Don't rewrite or delete progress logs from earlier sessions.
-- Never commit secrets or `.env` files. Never force-push. Never push to `main` unless the task explicitly says so.
+- Never commit secrets or `.env` files. Never force-push. Don't push to `main` directly (the auto-merge workflow does it after CI). Never edit `.github/workflows/`.
 - Keep the Babylon bundle lean: deep imports (`@babylonjs/core/Meshes/meshBuilder`). If you see "X needs to be imported before as it contains a side-effect", add that import to `src/shared/engine.ts`.
 
 ## Skills

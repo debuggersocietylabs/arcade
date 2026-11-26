@@ -14,4 +14,4 @@ description: Create a brand-new playable game for the arcade end to end (idea, s
 7. **Look at it**: build, serve with `npx vite preview`, take a Playwright screenshot of the start screen and mid-play; fix anything ugly or unreadable.
 8. **Polish**: fill `game.json` (no TODOs; pick a distinct `color` and `emoji`), set `status` to `playable` only if complete.
 9. Write `NOTES.md` (concept, state, next steps, technical notes, known issues).
-10. `npm run check`, then run the **session-wrapup** skill (marks the idea done, logs the session, opens the PR).
+10. `npm run check`, then run the **session-wrapup** skill (marks the idea done, logs the session, pushes the branch for auto-merge).
