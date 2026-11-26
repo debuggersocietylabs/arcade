@@ -18,6 +18,7 @@ names or assets.** Think courier/taxi/racing gigs, stunt ramps, collectibles, cu
 - Pure rules in `logic.ts` (15 unit tests), e2e test drives a car and exits it.
 
 ## Roadmap (the daily session picks from here and keeps extending it; every session adds depth AND a graphics upgrade)
+0. **Use the CC0 starter pack** in `assets/` (see `assets/CATALOG.md`): replace box cars, capsule player and flat blocks with the real models, add trees and street props, texture roads and sidewalks. Nothing uses it yet.
 0. **Graphics track:** lit windows and facades, shadows, sky + day/night, detailed car and character models, trees/street props, water, particles, post-processing (procedural or CC0 assets, see CLAUDE.md "Assets"; with a low-quality fallback).
 1. **Touch controls overlay** (virtual stick + enter/handbrake buttons) so it is playable on phones.
 2. **Minimap + compass** (DOM canvas) with player, cars and pickups.

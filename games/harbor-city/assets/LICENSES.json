@@ -1,0 +1,242 @@
+[
+  {
+    "file": "vehicles/car-sedan.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "vehicles/car-hatchback.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "vehicles/car-stationwagon.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "vehicles/car-taxi.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "vehicles/car-police.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-a.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-b.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-c.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-d.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-e.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-f.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-g.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "buildings/building-h.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/streetlight.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/trafficlight.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/bench.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/fire-hydrant.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/trash.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/dumpster.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/bush.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/water-tower.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "props/box.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0",
+    "author": "Kay Lousberg (KayKit)"
+  },
+  {
+    "file": "vehicles/truck.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-Racing",
+    "author": "Kenney"
+  },
+  {
+    "file": "vehicles/motorcycle.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-Racing",
+    "author": "Kenney"
+  },
+  {
+    "file": "nature/trees.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-City-Builder",
+    "author": "Kenney"
+  },
+  {
+    "file": "nature/trees-tall.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-City-Builder",
+    "author": "Kenney"
+  },
+  {
+    "file": "props/fountain.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-City-Builder",
+    "author": "Kenney"
+  },
+  {
+    "file": "buildings/garage.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-City-Builder",
+    "author": "Kenney"
+  },
+  {
+    "file": "characters/character.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-3D-Platformer",
+    "author": "Kenney"
+  },
+  {
+    "file": "props/coin.glb",
+    "license": "CC0-1.0",
+    "source": "https://github.com/KenneyNL/Starter-Kit-3D-Platformer",
+    "author": "Kenney"
+  },
+  {
+    "file": "textures/asphalt-color.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Asphalt012",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/asphalt-normal.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Asphalt012",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/concrete-color.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Concrete034",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/concrete-normal.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Concrete034",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/grass-color.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Grass004",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/grass-normal.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Grass004",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/bricks-color.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Bricks059",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/bricks-normal.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=Bricks059",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/paving-color.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=PavingStones070",
+    "author": "ambientCG (Lennart Demes)"
+  },
+  {
+    "file": "textures/paving-normal.jpg",
+    "license": "CC0-1.0",
+    "source": "https://ambientcg.com/view?id=PavingStones070",
+    "author": "ambientCG (Lennart Demes)"
+  }
+]
