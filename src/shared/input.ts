@@ -1,4 +1,4 @@
-export type InputCommand = 'left' | 'right' | 'up' | 'down' | 'action' | 'pause';
+export type InputCommand = 'left' | 'right' | 'up' | 'down' | 'action' | 'pause' | 'interact' | 'run' | 'tap';
 
 const KEY_MAP: Record<string, InputCommand> = {
   ArrowLeft: 'left', KeyA: 'left',
@@ -7,13 +7,16 @@ const KEY_MAP: Record<string, InputCommand> = {
   ArrowDown: 'down', KeyS: 'down',
   Space: 'action', Enter: 'action',
   KeyP: 'pause', Escape: 'pause',
+  KeyE: 'interact', KeyF: 'interact',
+  ShiftLeft: 'run', ShiftRight: 'run',
 };
 
 /**
  * Unified keyboard + touch input.
  *  - onCommand: fires once per key press (no auto-repeat) and once per swipe / tap.
  *  - isDown: polled state for held keys (smooth movement in 2D games).
- * Swipes map to left/right/up/down; a tap maps to "action".
+ * Swipes map to left/right/up/down. A tap fires BOTH "tap" and "action" (so simple games can treat it like
+ * Space, while games where Space means something else, e.g. a handbrake, can listen to "tap" only).
  */
 export function createInput(target: HTMLElement, onCommand: (cmd: InputCommand) => void) {
   const held = new Set<InputCommand>();
@@ -43,7 +46,10 @@ export function createInput(target: HTMLElement, onCommand: (cmd: InputCommand) 
     tracking = false;
     const dx = e.clientX - startX, dy = e.clientY - startY;
     if (Math.hypot(dx, dy) < SWIPE_MIN) {
-      if (performance.now() - startT < 400) onCommand('action');
+      if (performance.now() - startT < 400) {
+        onCommand('tap');
+        onCommand('action');
+      }
       return;
     }
     if (Math.abs(dx) > Math.abs(dy)) onCommand(dx > 0 ? 'right' : 'left');

@@ -16,3 +16,4 @@ See [CLAUDE.md](CLAUDE.md) for conventions, [SETUP.md](SETUP.md) for GitHub Page
 | Game | Type | |
 | --- | --- | --- |
 | Neon Runner | 3D | Synthwave lane runner |
+| Harbor City | 3D | Open-world city sandbox (work in progress, improved daily) |

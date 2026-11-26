@@ -14,7 +14,7 @@ const rows = readdirSync(gamesDir, { withFileTypes: true })
   .map((d) => {
     const manifest = JSON.parse(read(join(gamesDir, d.name, 'game.json')) || '{}');
     const notes = read(join(gamesDir, d.name, 'NOTES.md'));
-    const next = /## Next steps[^\n]*\n+([\s\S]*?)(\n## |$)/.exec(notes)?.[1]?.trim().split('\n')[0] ?? '(no NOTES.md next steps)';
+    const next = /## (?:Next steps|Roadmap)[^\n]*\n+([\s\S]*?)(\n## |$)/.exec(notes)?.[1]?.trim().split('\n')[0] ?? '(no Next steps/Roadmap in NOTES.md)';
     return `${d.name.padEnd(22)} ${String(manifest.type).padEnd(3)} ${String(manifest.status).padEnd(9)} added ${manifest.added}\n   next: ${next}`;
   });
 console.log(rows.join('\n') || '(none)');

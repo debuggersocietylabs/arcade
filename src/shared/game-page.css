@@ -14,3 +14,5 @@ html, body { margin: 0; height: 100%; background: #07070f; color: #e8e8ff; font-
 .hud-overlay h2 { margin: 0 0 8px; font-size: 32px; }
 .hud-overlay p { margin: 4px 0; color: #bcd; }
 .fatal { position: absolute; inset: 0; margin: 0; padding: 24px; background: #200; color: #fbb; white-space: pre-wrap; }
+.hud-hint { position: absolute; bottom: 8%; left: 50%; transform: translateX(-50%); background: #000a; padding: 8px 16px; border-radius: 999px; font-size: 16px; pointer-events: none; border: 1px solid #fff3; }
+.hud-hint[hidden] { display: none; }

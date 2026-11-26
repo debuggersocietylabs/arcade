@@ -20,11 +20,16 @@ Create these at **claude.ai/code → Routines** (or run `/schedule` inside Claud
 
 All sessions begin with no memory; `CLAUDE.md`, `.claude/skills/` and `progress/` give them everything. Keep the prompts short and point at the skills:
 
-| Routine | Suggested schedule | Prompt |
+| Routine | Schedule (stagger them!) | Prompt |
 | --- | --- | --- |
-| **New game** | weekly | `Use the new-game skill to create one new, complete, playable game for the arcade. Follow CLAUDE.md. Finish with the session-wrapup skill and open a PR.` |
-| **Continue development** | every 1-2 days | `Use the continue-game skill to make one meaningful improvement to an existing game (choose via npm run status). Follow CLAUDE.md. Finish with session-wrapup and open a PR.` |
-| **Bug hunt** | daily | `Use the fix-bugs skill: run all checks, playtest every game with scripted input, fix confirmed bugs test-first. Follow CLAUDE.md. Finish with session-wrapup and open a PR.` |
+| **Harbor City daily** | daily, e.g. 03:00 | `Use the harbor-city-daily skill: honestly assess the current state of Harbor City (play it with Playwright, take and review screenshots, score it), then ship one meaningful improvement and update the roadmap. Follow CLAUDE.md. Finish with session-wrapup and open a PR.` |
+| **Game ideas** | daily or weekly, e.g. 09:00 | `Use the ideate-game skill: research what is trending, then invent one original game idea with a pop-culture hook and write it up as a spec in progress/ideas/. Do not build it. Follow CLAUDE.md. Finish with session-wrapup and open a PR.` |
+
+Optional extras (same style): **New game** (weekly: `Use the new-game skill to build the best open idea that has a spec in progress/ideas/. Follow CLAUDE.md; finish with session-wrapup and open a PR.`) turns accumulated idea specs into playable games; **Bug hunt** (`Use the fix-bugs skill…`) is a cheap daily safety net.
+
+Tips:
+- Run different routines at different times of day: they all touch `progress/BACKLOG.md`, so overlapping runs can cause merge conflicts. Merge each PR before the next routine fires (or accept occasional conflicts for the agent to resolve).
+- The Harbor City routine needs the Playwright browser (screenshots), so the setup script below is mandatory for it. The ideas routine benefits from web access (trend research); enable network/web access in its environment if offered.
 
 Environment requirements for the routine's cloud environment:
 - Network access to the npm registry (for `npm ci`) and to Playwright's browser download (`npx playwright install --with-deps chromium`). Put those in the environment's setup script if available, e.g. `npm ci && npx playwright install --with-deps chromium`.

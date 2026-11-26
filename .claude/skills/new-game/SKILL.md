@@ -6,7 +6,7 @@ description: Create a brand-new playable game for the arcade end to end (idea, s
 # Create a new game
 
 1. **Orient**: `npm ci && npm run status`. Read `progress/BACKLOG.md`.
-2. **Choose the idea**: take the best open `[idea]` from the backlog, favouring variety (genre, 2D vs 3D, session length) relative to existing games. If none fit, invent one and add it to the backlog first. Keep scope small: a complete, fun 2-5 minute loop beats an ambitious unfinished one.
+2. **Choose the idea**: prefer open `[idea]` items that have a spec in `progress/ideas/` (build exactly that spec's MVP scope first), then other backlog ideas, favouring variety (genre, 2D vs 3D, session length) relative to existing games. If none fit, invent one and add it to the backlog first. Keep scope small: a complete, fun 2-5 minute loop beats an ambitious unfinished one.
 3. **Scaffold**: `npm run new-game -- <slug> --type 2d|3d --title "<Title>"`. Read `.claude/skills/game-dev-guide/SKILL.md`.
 4. **Logic first**: write rules in `logic.ts` (pure state + `step(state, dt, ...)` + `dispatch` commands) and cover them in `logic.test.ts` (movement, collisions, scoring, win/lose, determinism per seed, fairness of generated content).
 5. **Render**: implement `game.ts` on top of the logic: scene, lights/materials (`emissiveMaterial`), HUD (`hud.setStats`, `hud.showOverlay`), input (`createInput`), game-over + restart, high score (`submitHighScore`). Expose `getState()` and `command()` on the returned instance.

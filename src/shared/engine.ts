@@ -60,3 +60,11 @@ export function emissiveMaterial(scene: Scene, name: string, hex: string): Stand
   m.emissiveColor = c;
   return m;
 }
+
+/** Normal lit material (reacts to lights); use for solid-looking 3D objects. */
+export function litMaterial(scene: Scene, name: string, hex: string, specular = 0.1): StandardMaterial {
+  const m = new StandardMaterial(name, scene);
+  m.diffuseColor = Color3.FromHexString(hex);
+  m.specularColor = new Color3(specular, specular, specular);
+  return m;
+}

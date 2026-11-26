@@ -4,6 +4,7 @@ const state = (page: import('@playwright/test').Page) =>
   page.evaluate(() => window.__arcade!.game!.getState!() as { phase: string; z: number; lane: number; score: number });
 
 test('neon-runner: starts on Space, steers, and eventually crashes', async ({ page }) => {
+  test.setTimeout(90_000); // software WebGL is slow and the sim clamps dt, so game time can lag wall time
   await page.goto('/games/neon-runner/?seed=7');
   await page.waitForFunction(() => window.__arcade?.ready === true);
   expect((await state(page)).phase).toBe('ready');
@@ -16,7 +17,7 @@ test('neon-runner: starts on Space, steers, and eventually crashes', async ({ pa
   await expect.poll(async () => (await state(page)).z).toBeGreaterThan(5);
 
   // Standing in a lane without dodging must end the run within a reasonable time.
-  await expect.poll(async () => (await state(page)).phase, { timeout: 20_000 }).toBe('dead');
+  await expect.poll(async () => (await state(page)).phase, { timeout: 60_000 }).toBe('dead');
   await expect(page.locator('.hud-overlay')).toContainText('CRASHED');
 
   // High score is persisted for the landing page.

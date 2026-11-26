@@ -17,6 +17,12 @@ Tags: `[idea]` new game idea · `[game:<slug>]` work on an existing game · `[bu
 - [ ] [idea] **Asteroid Mine** (2D): inertia-based ship, mine rocks for ore, avoid collisions, upgrade between rounds.
 
 ## Existing games
+- [ ] [game:harbor-city] Touch controls overlay (virtual stick + Enter/Handbrake buttons). Top priority.
+- [ ] [game:harbor-city] Minimap + compass.
+- [ ] [game:harbor-city] First mission type: courier delivery (A→B, timer, payout) with a beacon marker.
+- [ ] [game:harbor-city] AI traffic on the road grid + pedestrians on sidewalks.
+- [ ] [game:harbor-city] Lighting/visual pass (building faces are too dark, cash pickups look flat, add windows, street props).
+- [ ] [game:harbor-city] WebAudio engine/skid sounds and ambience.
 - [ ] [game:neon-runner] Add WebAudio blips (coin / jump / crash) with a mute toggle.
 - [ ] [game:neon-runner] Particle burst on coin pickup and crash.
 - [ ] [game:neon-runner] New obstacle types: moving wall, power-up (shield).
@@ -29,4 +35,5 @@ Tags: `[idea]` new game idea · `[game:<slug>]` work on an existing game · `[bu
 - [ ] [infra] Add a shared touch-controls overlay (on-screen buttons) for mobile.
 
 ## Done
+- [x] [game:harbor-city] v0 foundation: procedural city, on-foot movement, enterable/drivable cars, cash pickups. (2026-11-26)
 - [x] [idea] Neon Runner (3D lane runner), first playable game. (2026-11-20)

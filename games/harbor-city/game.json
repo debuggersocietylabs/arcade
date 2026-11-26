@@ -1,0 +1,11 @@
+{
+  "slug": "harbor-city",
+  "title": "Harbor City",
+  "description": "An open-world sandbox city: wander on foot, hop into any car, drive anywhere and collect cash along the way.",
+  "type": "3d",
+  "status": "wip",
+  "controls": "WASD / arrows to move · Shift run · E enter/exit car · Space handbrake",
+  "emoji": "🚗",
+  "color": "#ff9f43",
+  "added": "2026-11-26"
+}
